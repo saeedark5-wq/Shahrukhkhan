@@ -19,8 +19,8 @@ export const DEFAULT_PROPERTIES: Property[] = [
       "Well-planned studio apartment in Skycourts Tower offering a comfortable living space of 427.87 sq. ft. Ideal for singles or working professionals, the unit features built-in wardrobes, central chiller A/C, full open view, and covered parking. Located in a well-maintained building by National Bonds Corporation PJSC with easy access to main roads and nearby facilities.",
     images: [
       "/images/Skycourts Tower.webp",
-      "/images/Skycourts Tower evening Picture.jfif",
-      "/images/Skycourts Tower Night Picture.jfif",
+      "/images/Skycourts Tower evening Picture.jpg",
+      "/images/Skycourts Tower Night Picture.jpg",
       "/images/Building.webp",
       "/images/Studio A.webp",
       "/images/Studio B.webp",

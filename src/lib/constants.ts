@@ -139,14 +139,14 @@ export const DUBAI_AREAS: DubaiArea[] = [
     name: "Skycourts Tower Amenities",
     description:
       "High-speed elevators, children's play area, landscaped surroundings, central air conditioning, well-maintained lobby, community gym, swimming pool, and jogging track.",
-    image: "/images/Skycourts Tower evening Picture.jfif",
+    image: "/images/Skycourts Tower evening Picture.jpg",
     slug: "skycourts-amenities",
   },
   {
     name: "Skycourts Tower Night View",
     description:
       "Experience stunning night views of the Dubai skyline from the tower's prime location in International City.",
-    image: "/images/Skycourts Tower Night Picture.jfif",
+    image: "/images/Skycourts Tower Night Picture.jpg",
     slug: "skycourts-night",
   },
 ];

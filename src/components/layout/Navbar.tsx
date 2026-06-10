@@ -43,7 +43,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-24">
           <Link href="/" className="flex items-center gap-2">
             <Image
-              src="/images/logo.jfif"
+              src="/images/logo.jpg"
               alt="Pyramid Star Real Estate Brokerage"
               width={40}
               height={40}

@@ -12,7 +12,7 @@ export default function Footer() {
           <div>
             <div className="flex items-center gap-2 mb-4">
               <Image
-                src="/images/logo.jfif"
+                src="/images/logo.jpg"
                 alt="Pyramid Star Real Estate Brokerage"
                 width={40}
                 height={40}

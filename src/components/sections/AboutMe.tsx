@@ -13,7 +13,7 @@ const badges = [
     icon: FaAward,
     label: "RERA Certified Agent",
     value: AGENT.license,
-    certImage: "/images/BROKER CARD.jfif",
+    certImage: "/images/BROKER CARD.jpg",
   },
   {
     icon: FaStar,
@@ -40,7 +40,7 @@ export default function AboutMe() {
                 className="relative w-full h-full bg-cover bg-center rounded-sm"
                 style={{
                   backgroundImage:
-                    "url('/images/shahrukh-khan-a.jfif')",
+                    "url('/images/shahrukh-khan-a.jpg')",
                 }}
               >
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent rounded-sm" />
