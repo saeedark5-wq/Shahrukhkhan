@@ -1,20 +1,14 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { FaStar, FaQuoteLeft } from "react-icons/fa";
-import { Testimonial } from "@/lib/types";
 import { loadTestimonials } from "@/lib/testimonials";
-import { TESTIMONIALS as DEFAULT_TESTIMONIALS } from "@/lib/constants";
 import SectionHeading from "@/components/ui/SectionHeading";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 
 export default function Testimonials() {
-  const [testimonials, setTestimonials] = useState<Testimonial[]>(() => DEFAULT_TESTIMONIALS);
-
-  useEffect(() => {
-    setTestimonials(loadTestimonials());
-  }, []);
+  const [testimonials] = useState(() => loadTestimonials());
 
   return (
     <section className="py-20 md:py-28">

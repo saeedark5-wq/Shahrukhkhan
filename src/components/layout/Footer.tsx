@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { FaInstagram, FaTiktok, FaFacebookF } from "react-icons/fa";
 import { FiPhone, FiMail, FiMapPin } from "react-icons/fi";
@@ -10,9 +11,11 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <img
+              <Image
                 src="/images/logo.jfif"
                 alt="Pyramid Star Real Estate Brokerage"
+                width={40}
+                height={40}
                 className="w-10 h-10 rounded-full object-cover"
               />
               <div>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { HiOutlineMenu, HiOutlineX } from "react-icons/hi";
@@ -23,10 +24,6 @@ export default function Navbar() {
   const isAdmin = pathname.startsWith("/admin");
 
   useEffect(() => {
-    setMenuOpen(false);
-  }, [pathname]);
-
-  useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -45,9 +42,11 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-24">
           <Link href="/" className="flex items-center gap-2">
-            <img
+            <Image
               src="/images/logo.jfif"
               alt="Pyramid Star Real Estate Brokerage"
+              width={40}
+              height={40}
               className="w-10 h-10 rounded-full object-cover"
             />
             <div className="hidden sm:block">

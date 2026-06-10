@@ -6,7 +6,7 @@ import Link from "next/link";
 import PropertyCard from "./PropertyCard";
 import { Property } from "@/lib/types";
 import SectionHeading from "@/components/ui/SectionHeading";
-import { DEFAULT_PROPERTIES, loadProperties } from "@/lib/properties";
+import { loadProperties } from "@/lib/properties";
 
 interface Props {
   properties?: Property[];
@@ -16,14 +16,9 @@ export default function FeaturedProperties({ properties }: Props) {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(false);
-  const [internalProperties, setInternalProperties] = useState<Property[]>(() =>
-    DEFAULT_PROPERTIES.filter((p) => p.featured)
+  const [internalProperties] = useState(() =>
+    loadProperties().filter((p) => p.featured)
   );
-
-  useEffect(() => {
-    const loaded = loadProperties();
-    setInternalProperties(loaded.filter((p) => p.featured));
-  }, []);
 
   const items = properties && properties.length > 0
     ? properties

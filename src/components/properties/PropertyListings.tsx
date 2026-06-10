@@ -1,18 +1,13 @@
 "use client";
 
-import { useState, useMemo, useEffect } from "react";
+import { useState, useMemo } from "react";
 import { FiSearch, FiSliders } from "react-icons/fi";
 import PropertyCard from "./PropertyCard";
-import { Property } from "@/lib/types";
 import { PRICE_RANGES, LOCATIONS } from "@/lib/constants";
-import { DEFAULT_PROPERTIES, loadProperties } from "@/lib/properties";
+import { loadProperties } from "@/lib/properties";
 
 export default function PropertyListings() {
-  const [allProperties, setAllProperties] = useState<Property[]>(() => DEFAULT_PROPERTIES);
-
-  useEffect(() => {
-    setAllProperties(loadProperties());
-  }, []);
+  const [allProperties] = useState(() => loadProperties());
   const [search, setSearch] = useState("");
   const [searchInput, setSearchInput] = useState("");
   const [typeFilter, setTypeFilter] = useState("all");

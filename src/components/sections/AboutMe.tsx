@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaAward, FaHandshake, FaStar } from "react-icons/fa";
 import { FiX } from "react-icons/fi";
@@ -117,9 +118,11 @@ export default function AboutMe() {
               >
                 <FiX className="w-6 h-6" />
               </button>
-              <img
+              <Image
                 src={showCert}
                 alt="Broker Certificate"
+                width={800}
+                height={600}
                 className="w-full h-auto rounded-sm"
               />
             </motion.div>

@@ -3,12 +3,36 @@ import crypto from "node:crypto";
 
 const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD;
 
+const RATE_LIMIT_WINDOW = 60_000;
+const MAX_ATTEMPTS = 5;
+const attempts = new Map<string, { count: number; resetAt: number }>();
+
+function isRateLimited(ip: string): boolean {
+  const now = Date.now();
+  const entry = attempts.get(ip);
+  if (!entry || now > entry.resetAt) {
+    attempts.set(ip, { count: 1, resetAt: now + RATE_LIMIT_WINDOW });
+    return false;
+  }
+  entry.count++;
+  if (entry.count > MAX_ATTEMPTS) return true;
+  return false;
+}
+
 export async function POST(request: Request) {
   try {
     if (!ADMIN_PASSWORD) {
       return NextResponse.json(
         { success: false, message: "Server misconfigured" },
         { status: 500 }
+      );
+    }
+
+    const ip = request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || "unknown";
+    if (isRateLimited(ip)) {
+      return NextResponse.json(
+        { success: false, message: "Too many attempts. Try again later." },
+        { status: 429 }
       );
     }
 

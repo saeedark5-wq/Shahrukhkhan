@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useParams } from "next/navigation";
 import { motion } from "framer-motion";
 import {
@@ -15,31 +15,16 @@ import { IoBedOutline } from "react-icons/io5";
 import { LuBath } from "react-icons/lu";
 import { FaWhatsapp } from "react-icons/fa";
 import Link from "next/link";
-import { Property } from "@/lib/types";
 import { AGENT } from "@/lib/constants";
-import { DEFAULT_PROPERTIES, loadProperties } from "@/lib/properties";
-import { PropertyDetailsSkeleton } from "@/components/ui/LoadingSkeleton";
+import { loadProperties } from "@/lib/properties";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 
 export default function PropertyDetailsPage() {
   const params = useParams();
   const [currentImage, setCurrentImage] = useState(0);
-  const [loading, setLoading] = useState(false);
-  const [allProperties, setAllProperties] = useState<Property[]>(() => DEFAULT_PROPERTIES);
-
-  useEffect(() => {
-    setAllProperties(loadProperties());
-  }, []);
+  const [allProperties] = useState(() => loadProperties());
 
   const property = allProperties.find((p) => p.id === params.id);
-
-  if (loading) {
-    return (
-      <div className="pt-24 pb-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <PropertyDetailsSkeleton />
-      </div>
-    );
-  }
 
   if (!property) {
     return (

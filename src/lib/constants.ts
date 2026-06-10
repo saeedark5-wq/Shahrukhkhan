@@ -241,7 +241,6 @@ export const LOCATIONS = [
   { value: "Dubai South", label: "Dubai South" },
   { value: "Expo City Dubai", label: "Expo City Dubai" },
   { value: "The Palm Jebel Ali", label: "The Palm Jebel Ali" },
-  { value: "Al Furjan", label: "Al Furjan" },
   { value: "Al Ghadeer", label: "Al Ghadeer" },
   { value: "Al Jaddaf", label: "Al Jaddaf" },
   { value: "Cultural Village", label: "Cultural Village" },
