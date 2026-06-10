@@ -18,6 +18,9 @@ const playfair = Playfair_Display({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://srkrealestate.com"),
+  icons: {
+    icon: "/images/logo.jpg",
+  },
   title: "Pyramid Star Real Estate Brokerage | Luxury Properties in Dubai",
   description:
     "Discover luxury properties in Dubai with Shahrukh Khan at Pyramid Star Real Estate Brokerage. Premium villas, apartments, and commercial spaces for sale and rent.",
